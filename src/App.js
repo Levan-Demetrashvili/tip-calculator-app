@@ -6,17 +6,17 @@ import SelectTipRate from "./components/Calculator/SelectTipRate";
 import Result from "./components/Calculator/Result";
 
 export default function App() {
-  const [bill, setBill] = useState(0);
+  const [bill, setBill] = useState(null);
   const [tipRate, setTipRate] = useState(0);
-  const [numPeople, setNumPeople] = useState(0);
+  const [numPeople, setNumPeople] = useState(null);
 
-  const tipPerPerson = bill && tipRate && numPeople && (bill * tipRate) / 100 / numPeople;
-  const totalPerPerson = bill && tipRate && numPeople && (bill + (bill * tipRate) / 100) / numPeople;
+  const tipPerPerson = bill && tipRate && numPeople ? (bill * tipRate) / 100 / numPeople : 0;
+  const totalPerPerson = bill && tipRate && numPeople ? (bill + (bill * tipRate) / 100) / numPeople : 0;
 
   function reset() {
-    setBill(0);
+    setBill(null);
     setTipRate(0);
-    setNumPeople(0);
+    setNumPeople(null);
   }
 
   return (

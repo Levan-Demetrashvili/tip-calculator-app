@@ -52,10 +52,19 @@ body {
   gap: 32px;
 }
 
+.message {
+  display: flex;
+  justify-content: space-between;
+}
+
 .input-title {
   display: block;
   color: #5e7a7d;
   margin-bottom: 8px;
+}
+
+.message p.error {
+  color: #b51717;
 }
 
 .input-wrapper {
@@ -77,7 +86,7 @@ body {
   background-color: #f4fafa;
   border-radius: 5px;
 
-  padding: 4.8px 16px;
+  padding: 0.3rem 1rem;
   border: none;
 }
 
@@ -101,7 +110,7 @@ body {
   border-radius: 5px;
 
   display: block;
-  padding: 4.8px 16px;
+  padding: 0.3rem 1rem;
   cursor: pointer;
 }
 
@@ -185,4 +194,25 @@ input[type="number"] {
 input[type="radio"] {
   position: absolute;
   visibility: hidden;
+}
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 13px;
+  }
+
+  .calculator {
+    max-width: 715px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calculator {
+    max-width: 576px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rates-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
